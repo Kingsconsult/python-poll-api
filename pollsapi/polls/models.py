@@ -20,6 +20,13 @@ class Choice(models.Model):
         return self.choice_text
 
 
+class HelloKings(models.Model):
+    king = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.king
+
+
 class Vote(models.Model):
     choice = models.ForeignKey(
         Choice, related_name='votes', on_delete=models.CASCADE)
